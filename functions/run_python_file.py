@@ -48,7 +48,7 @@ def run_python_file(working_directory, file_path, args=[]):
      
 schema_run_python_file = types.FunctionDeclaration(
     name="run_python_file",
-    description="Run the selected python file with the given arguments.",
+    description="Run the selected python file, it can have arguments, assume they don't, and run the file without them if not provided, dont ask for them, if you dont have them, just run",
     parameters=types.Schema(
         type=types.Type.OBJECT,
         properties={
@@ -60,8 +60,9 @@ schema_run_python_file = types.FunctionDeclaration(
                 type=types.Type.ARRAY,
                 description="Array of arguments that must be passed to the function",
                 items=types.Schema(type=types.Type.STRING),
+                default=[],  
             ),
-            
         },
+        required=["file_path"],
     ),
 )
