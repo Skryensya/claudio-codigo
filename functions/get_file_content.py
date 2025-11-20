@@ -25,7 +25,7 @@ def get_file_content(working_directory, file_path):
         return file_content_string
     
 
-schema_get_file_content =   types.FunctionDeclaration(
+schema_get_file_content = types.FunctionDeclaration(
     name="get_file_content",
     description="Reads the contents of the specified file up to 10000 characters.",
     parameters=types.Schema(

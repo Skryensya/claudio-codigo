@@ -7,6 +7,7 @@ from google.genai import types
 def call_function(function_call_part, verbose=False):
     function_name = function_call_part.name
     function_args = function_call_part.args
+ 
     if verbose:
         print(f"Calling function: {function_name}({function_args})")
     else:
@@ -20,7 +21,7 @@ def call_function(function_call_part, verbose=False):
     }
 
     if function_name in functions_dictionary.keys():
-        print(function_name)
+    
         fn = functions_dictionary[function_name]
         import inspect
         sig = inspect.signature(fn)
